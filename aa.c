@@ -88,13 +88,6 @@ int getLinkedListLength(LinkedList* pList) {
 }
 
 
-int getListLength(LinkedList *pList) {
-	return pList->currentCount;
-}
-
-#include<stdio.h>
-
-
 
 int main() {
 
@@ -111,7 +104,7 @@ int main() {
 
 	scanf_s("%d %d", &n, &m );
 
-	for (i = 0; i < n; i++) {
+	for (i = 0; i <= n; i++) {
 
 		addLinkedListData(pList,i,i+1);
 
@@ -119,10 +112,10 @@ int main() {
 
 	printf("<");
 
-	for (count = 0; count <= n; count++) {
+	for (count = 0; count < n/2; count++) {
 
 		for (i = 1; i < m; i++) {
-			addLinkedListData(pList, getLinkedListLength(pList) , getLinkedListData(pList,i));
+			addLinkedListData(pList, getLinkedListLength(pList), getLinkedListData(pList,i));
 		}
 
 
@@ -132,10 +125,8 @@ int main() {
 
 
 		printf("%d", getLinkedListData(pList, 1));
+
 		removeLinkedListData(pList, 1);
-
-		printf("a");
-
 		
 	}
 
