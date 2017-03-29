@@ -104,29 +104,38 @@ int main() {
 
 	scanf_s("%d %d", &n, &m );
 
-	for (i = 0; i <= n; i++) {
+	if (1 > n || 5000 < n) {  //범위 제한 1<=m ,n<=5000
+		exit(1);
+	}
+	if (1 > m || 5000 < m) {
+		exit(1);
+	}
+	for (i = 0; i <n; i++) {
 
 		addLinkedListData(pList,i,i+1);
 
 	}
 
+
+
+
 	printf("<");
 
-	for (count = 0; count < n/2; count++) {
+	for (count = 0; count < n; count++) {
 
-		for (i = 1; i < m; i++) {
-			addLinkedListData(pList, getLinkedListLength(pList), getLinkedListData(pList,i));
+		for (i = 0; i < m - 1; i++) {
+			addLinkedListData(pList, getLinkedListLength(pList), getLinkedListData(pList, i));
 		}
 
 
-		for (j = 1; j < m ; j++) {
-			removeLinkedListData(pList, j);
+		for (j = 0; j < m - 1; j++) {
+			removeLinkedListData(pList, 0);  // 0 번째가 지워지면 다시 0번으로 초기화
 		}
 
 
-		printf("%d", getLinkedListData(pList, 1));
+		printf("%d", getLinkedListData(pList, 0));
 
-		removeLinkedListData(pList, 1);
+		removeLinkedListData(pList, 0);
 		
 	}
 
