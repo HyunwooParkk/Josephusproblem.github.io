@@ -134,6 +134,8 @@ int main() {
 		printf("%d", getLinkedListData(pList, 1));
 		removeLinkedListData(pList, 1);
 
+		printf("a");
+
 		
 	}
 
